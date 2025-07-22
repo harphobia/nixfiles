@@ -1,12 +1,5 @@
 { inputs, lib, config, pkgs, ... }:
-let
-    home-manager = inputs.home-manager;
-in
 {
-    imports = [
-         (import "${home-manager}/nixos")
-    ];
-
     options = {
         users.user.enable =  lib.mkEnableOption "user";
     };
@@ -19,9 +12,5 @@ in
             extraGroups = [ "networkmanager" "wheel" "docker" "gamemode" "adbusers"];
             shell = pkgs.zsh;
         };
-
-        home-manager.useUserPackages = true;
-        home-manager.useGlobalPkgs = true;
-        home-manager.users.user = import ./home.nix;
     };
 }
