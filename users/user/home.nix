@@ -3,6 +3,7 @@
 	imports = [
 		./cli
 		./gui
+		./configs/stylix.nix
 	];
 
 	home.username = "user";

@@ -24,14 +24,9 @@
 		nixosConfigurations.os = inputs.nixpkgs-stable.lib.nixosSystem{
 			inherit system pkgs;
 			specialArgs = { inherit inputs; };
-			modules = [ 
+			modules = [
+				inputs.stylix.nixosModules.stylix 
 				./host/os/configuration.nix
-				inputs.stylix.nixosModules.stylix
-				inputs.home-manager.nixosModules.home-manager {
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.users.user = import ./users/user/home.nix;
-				}
 			];
 		};
 
