@@ -32,11 +32,6 @@
 		recursive = true;
 	};
 
-	home.file.".icons" = {
-		source = ./configs/icons;
-		recursive = true;
-	};
-
 	home.file.".zprofile".source = ./configs/.zprofile;
 
 	home.stateVersion = "25.05";
