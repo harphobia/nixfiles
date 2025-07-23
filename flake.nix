@@ -10,6 +10,10 @@
 			url = "github:nix-community/stylix/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs-stable";
 		};
+		nixvim = {
+			url = "github:nix-community/nixvim/nixos-25.05";
+			inputs.nixpkgs.follows = "nixpkgs-stable";
+		};
 	};
 
 	outputs = { self, ... } @inputs :
@@ -25,7 +29,6 @@
 			inherit system pkgs;
 			specialArgs = { inherit inputs; };
 			modules = [
-				inputs.stylix.nixosModules.stylix 
 				./host/os/configuration.nix
 			];
 		};
@@ -35,6 +38,7 @@
 			extraSpecialArgs = { inherit inputs; };
 			modules = [
 				inputs.stylix.homeModules.stylix
+				inputs.nixvim.homeModules.nixvim
 				./users/user/home.nix
 			];
 		};

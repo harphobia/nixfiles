@@ -1,0 +1,18 @@
+{inputs, pkgs, lib, config, ...}:
+{
+	imports = [
+		./plugins
+	];
+	programs.nixvim = {
+		enable = true;
+		defaultEditor = true;
+		clipboard.providers.wl-copy.enable = true;
+		globals.mapleader = " ";
+		opts = {
+			number = true;
+			relativenumber = true;
+			signcolumn = "yes";
+		};
+		extraConfigLuaPost = ''vim.cmd [[ colorscheme default ]]'';
+	};
+}
