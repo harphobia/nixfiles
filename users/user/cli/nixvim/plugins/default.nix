@@ -2,5 +2,7 @@
 {
 	imports = [
 		./telescope.nix
+		./cmp.nix
+		./lsp.nix
 	];
 }

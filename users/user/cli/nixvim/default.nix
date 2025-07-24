@@ -12,6 +12,11 @@
 			number = true;
 			relativenumber = true;
 			signcolumn = "yes";
+
+			shiftwidth = 4;
+			tabstop = 4;
+			softtabstop = 4;
+			expandtab = true;
 		};
 		extraConfigLuaPost = ''vim.cmd [[ colorscheme default ]]'';
 	};

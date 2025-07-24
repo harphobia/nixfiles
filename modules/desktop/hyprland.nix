@@ -21,6 +21,7 @@
 		
 		alacritty
     		wofi
+		wl-clipboard
   	];
     };
 }

@@ -5,8 +5,9 @@
 
         ./utils/tlp.nix
         ./utils/nbfc-linux.nix
-	./utils/docker.nix
-	./utils/adb.nix
+    	./utils/docker.nix
+	    ./utils/adb.nix
+        ./utils/utils.nix
 
         ./shell/zsh.nix
 
