@@ -1,16 +1,8 @@
-{pkgs, lib, config, ...}:
+{ config, pkgs, inputs, ... }:
 {
 	home.packages = with pkgs;[
-		unrar
-		unzip
-		p7zip
-		jq
-		ripgrep
-		fzf
-		tree
-		pciutils
-		usbutils
 		aria2
+        rustup
 		ncspot
 		lf
 		lazysql
