@@ -12,5 +12,6 @@
 		pciutils
 		usbutils
 		ffmpeg
+        arion
     ];
 }

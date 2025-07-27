@@ -1,6 +1,7 @@
 {pkgs, lib, config, ...}:
 {
     imports = [
-	./obs.nix
+	    ./obs.nix
+        ./libreoffice.nix
     ];
 }
