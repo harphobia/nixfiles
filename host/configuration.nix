@@ -1,43 +1,26 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      ../../users
-      ../../modules
-      ../../overlays
+      ../home-manager/user.nix
+      ../modules
+      ../overlays
     ];
 
-  # Users
-  users.user.enable = true;
+  #flatpak
+  services.flatpak.enable = true;
 
-  # Modules
-  modules.hardware.nvidia.enable = true;
-  modules.utils.tlp.enable = true;
-  modules.shell.zsh.enable = true;
-  
-  # Desktop
-  modules.desktop.kde.enable = false;
-  modules.desktop.gnome.enable = false;
-  modules.desktop.hyprland.enable = true;
-
-  # nbfc-linux-configs
-  modules.utils.nbfc.enable = true;
-  modules.utils.nbfc.model = "Acer Nitro AN515-57";
-
-  # docker
-  modules.utils.docker.enable = true; 
-  modules.utils.docker.rootless.enable = true; 
-
-  modules.utils.adb.enable = true;
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixos";
+  # networking.wireless.enable = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -76,21 +59,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable automatic login for the user (chose getty or displayManager).
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "user";
-  
-  services.getty.autologinUser = "user";
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
     vim
   ];
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Fonts
   fonts.packages = with pkgs; [
@@ -111,15 +85,6 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
-  #OBS virtual camera
-  programs.obs-studio.enableVirtualCamera = true;
-
-  #game mode
-  programs.gamemode.enable = true;
-
-  #flatpak
-  services.flatpak.enable = true;
-
   system.stateVersion = "25.05";
 
 }

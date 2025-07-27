@@ -1,27 +1,12 @@
 {lib, config, pkgs, ...}:
 {
-	imports = [
-		./cli
-		./gui
-		./configs/stylix.nix
+	imports = [ 
+		./apps
+		./configs/stylix.nix	
 	];
 	
 	home.username = "user";
 	home.homeDirectory = "/home/user";
-
-	home.packages = with pkgs; [
-		unrar
-		unzip
-		p7zip
-		jq
-		ripgrep
-		fzf
-		tree
-		pciutils
-		usbutils
-		aria2
-	];
-
 
 	xdg.configFile."hypr" = {
 		source = ./configs/hyprland;
