@@ -6,22 +6,22 @@
 
 
     config = lib.mkIf config.modules.desktop.hyprland.enable {
-	programs.hyprland.enable = true; 
-	programs.hyprland.withUWSM = true;
-	programs.hyprlock.enable = true;
-  	services.hypridle.enable = true;
-  	
-  	environment.systemPackages = with pkgs; [
-  		hyprpicker
-    		hyprcursor
-    		hyprlock
-    		hypridle
-    		hyprpaper
-		hyprshot    		
+		programs.hyprland.enable = true; 
+		programs.hyprland.withUWSM = true;
+		programs.hyprlock.enable = true;
+		services.hypridle.enable = true;
 		
-		alacritty
-    		wofi
-		wl-clipboard
-  	];
+		environment.systemPackages = with pkgs; [
+			hyprpicker
+			hyprcursor
+			hyprlock
+			hypridle
+			hyprpaper
+			hyprshot    		
+			
+			alacritty
+			wofi
+			wl-clipboard
+		];
     };
 }
