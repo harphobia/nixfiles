@@ -1,11 +1,11 @@
 {lib, config, pkgs, ... }:
 {
     options = {
-        modules.desktop.hyprland.enable =  lib.mkEnableOption "hyprland";
+        modules.hyprland.enable =  lib.mkEnableOption "hyprland";
     };
 
 
-    config = lib.mkIf config.modules.desktop.hyprland.enable {
+    config = lib.mkIf config.modules.hyprland.enable {
 		programs.hyprland.enable = true; 
 		programs.hyprland.withUWSM = true;
 		programs.hyprlock.enable = true;

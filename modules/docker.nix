@@ -1,15 +1,15 @@
 {lib, config, pkgs, ... }:
 {
 	options = {
-		modules.utils.docker.enable = lib.mkEnableOption "docker";
-		modules.utils.docker.rootless.enable = lib.mkEnableOption "docker rootless";
+		modules.docker.enable = lib.mkEnableOption "docker";
+		modules.docker.rootless.enable = lib.mkEnableOption "docker rootless";
 	};
 
-	config = lib.mkIf config.modules.utils.docker.enable {
+	config = lib.mkIf config.modules.docker.enable {
 		virtualisation.docker = {
-			enable = !config.modules.utils.docker.rootless.enable;
+			enable = !config.modules.docker.rootless.enable;
 			rootless = {
-				enable = config.modules.utils.docker.rootless.enable;
+				enable = config.modules.docker.rootless.enable;
 				setSocketVariable = true;
 				daemon.settings = {
 					dns = [ "1.1.1.1" "8.8.8.8" ];

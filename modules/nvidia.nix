@@ -1,11 +1,11 @@
 {lib, config, pkgs, ... }:
 {
     options = {
-        modules.hardware.nvidia.enable =  lib.mkEnableOption "nvidia";
+        modules.nvidia.enable =  lib.mkEnableOption "nvidia";
     };
 
 
-    config = lib.mkIf config.modules.hardware.nvidia.enable {
+    config = lib.mkIf config.modules.nvidia.enable {
         hardware.graphics.enable = true;
         services.xserver.videoDrivers = [ "modesetting" "nvidia"];
         hardware.nvidia = {

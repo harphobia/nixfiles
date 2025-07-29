@@ -1,21 +1,21 @@
 {lib, config, pkgs, ... }:
 let
-    #command = "bin/nbfc_service --config-file '/home/${config.modules.utils.nbfc.user}/.config/nbfc.json'";
+    #command = "bin/nbfc_service --config-file '/home/${config.modules.nbfc.user}/.config/nbfc.json'";
     command = "bin/nbfc_service --config-file '/etc/nbfc/config.json'";
 in
 {
     options = {
-        modules.utils.nbfc.enable = lib.mkEnableOption "nbfc-linux";
-        modules.utils.nbfc.model = lib.mkOption {
+        modules.nbfc.enable = lib.mkEnableOption "nbfc-linux";
+        modules.nbfc.model = lib.mkOption {
             description = "model laptop";
             default = "";
         };
     };
 
-    config = lib.mkIf config.modules.utils.nbfc.enable  {
+    config = lib.mkIf config.modules.nbfc.enable  {
         environment.systemPackages = with pkgs; [ nbfc-linux ];
         environment.etc."nbfc/config.json".text = ''
-            {"SelectedConfigId": "${config.modules.utils.nbfc.model}"}
+            {"SelectedConfigId": "${config.modules.nbfc.model}"}
         '';
 
         systemd.services.nbfc_service = {

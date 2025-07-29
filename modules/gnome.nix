@@ -1,11 +1,11 @@
 {lib, config, pkgs, ... }:
 {
     options = {
-        modules.desktop.gnome.enable =  lib.mkEnableOption "gnome";
+        modules.gnome.enable =  lib.mkEnableOption "gnome";
     };
 
 
-    config = lib.mkIf config.modules.desktop.gnome.enable {
+    config = lib.mkIf config.modules.gnome.enable {
         services.xserver.enable = true;
 
         # Enable the GNOME Desktop Environment.

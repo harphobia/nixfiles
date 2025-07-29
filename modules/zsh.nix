@@ -1,11 +1,11 @@
 {lib, config, pkgs, ... }:
 {
     options = {
-        modules.shell.zsh.enable =  lib.mkEnableOption "zsh";
+        modules.zsh.enable =  lib.mkEnableOption "zsh";
     };
 
 
-    config = lib.mkIf config.modules.shell.zsh.enable {
+    config = lib.mkIf config.modules.zsh.enable {
         users.defaultUserShell=pkgs.zsh;
 	system.userActivationScripts.zshrc = "touch .zshrc";
         programs.zsh = {

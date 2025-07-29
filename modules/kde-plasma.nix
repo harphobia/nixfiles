@@ -1,11 +1,11 @@
 {lib, config, pkgs, ... }:
 {
     options = {
-        modules.desktop.kde.enable =  lib.mkEnableOption "kde plasma";
+        modules.kde.enable =  lib.mkEnableOption "kde plasma";
     };
 
 
-    config = lib.mkIf config.modules.desktop.kde.enable {
+    config = lib.mkIf config.modules.kde.enable {
         services.xserver.enable = true;
 
         # Enable the KDE Plasma Desktop Environment.
