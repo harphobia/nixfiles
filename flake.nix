@@ -6,10 +6,6 @@
 			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs-stable";
 		};
-		stylix = {
-			url = "github:nix-community/stylix/release-25.05";
-			inputs.nixpkgs.follows = "nixpkgs-stable";
-		};
 		nixvim = {
 			url = "github:nix-community/nixvim/nixos-25.05";
 			inputs.nixpkgs.follows = "nixpkgs-stable";
