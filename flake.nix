@@ -25,7 +25,7 @@
 			inherit system pkgs;
 			specialArgs = { inherit inputs; };
 			modules = [
-				./host/os/configuration.nix
+				./host/configuration.nix
 			];
 		};
 
@@ -33,9 +33,8 @@
 			inherit pkgs;
 			extraSpecialArgs = { inherit inputs; };
 			modules = [
-				inputs.stylix.homeModules.stylix
 				inputs.nixvim.homeModules.nixvim
-				./users/user/home.nix
+				./home-manager/home.nix
 			];
 		};
 	};
