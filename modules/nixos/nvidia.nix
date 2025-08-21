@@ -8,6 +8,11 @@
     config = lib.mkIf config.modules.nvidia.enable {
         hardware.graphics.enable = true;
         services.xserver.videoDrivers = [ "modesetting" "nvidia"];
+        
+        environment.variables = {
+        	__GL_SHADER_DISK_CACHE_SKIP_CLEANUP = 1;
+        };
+        
         hardware.nvidia = {
             modesetting.enable = true;
             powerManagement.enable = false;

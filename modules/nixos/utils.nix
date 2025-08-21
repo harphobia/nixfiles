@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 {
     environment.systemPackages = with pkgs; [
-        unrar
+        	unrar
 		unzip
 		p7zip
 		jq
@@ -12,6 +12,9 @@
 		pciutils
 		usbutils
 		ffmpeg
-        arion
+        	arion
     ];
+    
+	programs.adb.enable = true;
+	services.udev.packages = [ pkgs.android-udev-rules ];
 }

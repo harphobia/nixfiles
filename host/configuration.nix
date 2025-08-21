@@ -4,9 +4,9 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../modules
+      ../modules/nixos
       ../overlays
-      ../home-manager/user.nix
+      ./user.nix
     ];
 
   #flatpak
