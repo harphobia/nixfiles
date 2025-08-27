@@ -13,6 +13,8 @@
         	__GL_SHADER_DISK_CACHE_SKIP_CLEANUP = 1;
         };
         
+        environment.systemPackages = with pkgs; [ cudaPackages.cudatoolkit ];
+        
         hardware.nvidia = {
             modesetting.enable = true;
             powerManagement.enable = false;

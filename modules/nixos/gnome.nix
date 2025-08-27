@@ -19,13 +19,16 @@
         environment.systemPackages = with pkgs; [
         	gnome-tweaks
         	gnome-extension-manager
+        	gnome-clocks
         	yaru-theme
         	easyeffects
 		helvum
 		pavucontrol
+		spice-gtk
         ];
         
         services.gnome.gnome-keyring.enable = lib.mkForce false;
+        services.switcherooControl.enable = lib.mkForce true;
         
         ## Remove default GNOME apps - comment out apps you want to keep
 	environment.gnome.excludePackages = (with pkgs; [
@@ -59,7 +62,7 @@
 	    geary       # email client
 	    seahorse    # password manager
 	    # simple-scan # document scanner
-	    totem       # video player
+	    # totem       # video player
 	    yelp        # help viewer
 	]);
 	

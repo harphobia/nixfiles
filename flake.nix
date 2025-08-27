@@ -10,6 +10,7 @@
 			url = "github:nix-community/nixvim/nixos-25.05";
 			inputs.nixpkgs.follows = "nixpkgs-stable";
 		};
+		blender-bin.url = "github:edolstra/nix-warez?dir=blender";
 	};
 
 	outputs = { self, ... } @inputs :
@@ -17,6 +18,10 @@
 		system = "x86_64-linux";
 		pkgs = import inputs.nixpkgs-stable {
 			inherit system;
+			overlays = [
+				( import ./overlays/nbfc-overlay.nix)
+				inputs.blender-bin.overlays.default
+			];
 			config.allowUnfree = true;
 		};
 	in

@@ -5,7 +5,6 @@
     [
       ./hardware-configuration.nix
       ../modules/nixos
-      ../overlays
       ./user.nix
     ];
 
@@ -64,6 +63,7 @@
   environment.systemPackages = with pkgs; [
     home-manager
     vim
+    git
   ];
 
   # Fonts
@@ -82,6 +82,8 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  boot.supportedFilesystems = [ "ntfs" ];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
