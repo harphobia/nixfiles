@@ -23,7 +23,6 @@
         	easyeffects
 		helvum
 		pavucontrol
-		spice-gtk
 		yaru-theme
         ];
         
