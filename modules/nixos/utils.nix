@@ -12,9 +12,11 @@
 		pciutils
 		usbutils
 		ffmpeg
-        	arion
     ];
     
 	programs.adb.enable = true;
 	services.udev.packages = [ pkgs.android-udev-rules ];
+	
+	programs.obs-studio.enableVirtualCamera = true;
+	boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
 }
