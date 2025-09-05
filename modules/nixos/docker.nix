@@ -6,6 +6,7 @@
 	};
 
 	config = lib.mkIf config.modules.docker.enable {
+		environment.systemPackages = with pkgs; [ docker-compose ];
 		virtualisation.docker = {
 			enable = !config.modules.docker.rootless.enable;
 			rootless = {
