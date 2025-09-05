@@ -26,7 +26,7 @@
 		yaru-theme
         ];
         
-        services.gnome.gnome-keyring.enable = lib.mkForce false;
+        # services.gnome.gnome-keyring.enable = lib.mkForce false;
         services.switcherooControl.enable = lib.mkForce true;
         
         ## Remove default GNOME apps - comment out apps you want to keep
