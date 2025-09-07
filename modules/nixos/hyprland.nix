@@ -5,6 +5,8 @@
 		programs.hyprland.withUWSM = true;
 		programs.hyprlock.enable = true;
 		
+		services.udisks2.enable = true;
+		
 		environment.systemPackages = with pkgs; [
 			hyprpicker
 			hyprcursor
