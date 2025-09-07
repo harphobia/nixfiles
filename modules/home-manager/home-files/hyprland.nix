@@ -30,6 +30,11 @@
 			recursive = true;
 		};
 		
+		alacritty = {
+			source = ../hyprland-configs/alacritty;
+			recursive = true;
+		};
+		
 		"ncspot/config.toml".source = ../hyprland-configs/ncspot/ncspot.toml;
 	};
 	
