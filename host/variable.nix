@@ -18,8 +18,8 @@
     	
     	config = {
 		modules.kde.enable = lib.mkDefault false;
-		modules.gnome.enable = lib.mkDefault true;
-		modules.hyprland.enable = lib.mkDefault false;
+		modules.gnome.enable = lib.mkDefault false;
+		modules.hyprland.enable = lib.mkDefault true;
 
 		modules.nvidia.enable = lib.mkDefault true;
 		modules.tlp.enable = lib.mkDefault true;
