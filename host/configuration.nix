@@ -8,17 +8,11 @@
       ./user.nix
     ];
 
-  #flatpak
-  services.flatpak.enable = true;
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "os";
   # networking.wireless.enable = true;
 
   # Enable networking
@@ -58,14 +52,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    home-manager
-    vim
-    git
-  ];
-
   # Fonts
   fonts.packages = with pkgs; [
     noto-fonts
@@ -82,10 +68,12 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  
+   services.flatpak.enable = true;
+   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	
+   boot.supportedFilesystems = [ "ntfs" ];
+   boot.kernelPackages = pkgs.linuxPackages_zen;
   
   system.stateVersion = "25.05";
 

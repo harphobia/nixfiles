@@ -26,20 +26,31 @@
 		};
 	in
 	{
-		nixosConfigurations.os = inputs.nixpkgs-stable.lib.nixosSystem{
+		nixosConfigurations.default = inputs.nixpkgs-stable.lib.nixosSystem{
 			inherit system pkgs;
 			specialArgs = { inherit inputs; };
 			modules = [
+				./host/variable.nix
 				./host/configuration.nix
 			];
 		};
 
-		homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
+		homeConfigurations.default = inputs.home-manager.lib.homeManagerConfiguration {
+			inherit pkgs;
+			extraSpecialArgs = { inherit inputs; };
+			modules = [
+				./host/variable.nix
+				./modules/home-manager/home-files/default.nix
+			];
+		};
+		
+		homeConfigurations.hyprland = inputs.home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
 			extraSpecialArgs = { inherit inputs; };
 			modules = [
 				inputs.nixvim.homeModules.nixvim
-				./host/home.nix
+				./host/variable.nix
+				./modules/home-manager/home-files/hyprland.nix
 			];
 		};
 	};

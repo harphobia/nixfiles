@@ -13,6 +13,8 @@
 		usbutils
 		ffmpeg
 		arrpc
+		home-manager
+    		git
     ];
     
 	programs.adb.enable = true;

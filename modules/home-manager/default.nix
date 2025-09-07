@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... }:
 {
 	imports = [
-		./nixvim
         	./dev.nix
         	./git.nix
         	./libreoffice.nix

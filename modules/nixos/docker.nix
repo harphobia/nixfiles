@@ -1,10 +1,5 @@
 {lib, config, pkgs, ... }:
 {
-	options = {
-		modules.docker.enable = lib.mkEnableOption "docker";
-		modules.docker.rootless.enable = lib.mkEnableOption "docker rootless";
-	};
-
 	config = lib.mkIf config.modules.docker.enable {
 		environment.systemPackages = with pkgs; [ docker-compose ];
 		virtualisation.docker = {

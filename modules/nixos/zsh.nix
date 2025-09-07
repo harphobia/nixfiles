@@ -1,10 +1,5 @@
 {lib, config, pkgs, ... }:
 {
-    options = {
-        modules.zsh.enable =  lib.mkEnableOption "zsh";
-    };
-
-
     config = lib.mkIf config.modules.zsh.enable {
         users.defaultUserShell=pkgs.zsh;
 	system.userActivationScripts.zshrc = "touch .zshrc";

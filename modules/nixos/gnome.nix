@@ -1,10 +1,5 @@
 {lib, config, pkgs, ... }:
 {
-    options = {
-        modules.gnome.enable =  lib.mkEnableOption "gnome";
-    };
-
-
     config = lib.mkIf config.modules.gnome.enable {
         services.xserver.enable = true;
 

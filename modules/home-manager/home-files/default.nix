@@ -1,13 +1,12 @@
 {lib, config, pkgs, ...}:
 {
 	imports = [ 
-		../modules/home-manager
+		../default.nix
 	];
 	
 	home.username = "user";
 	home.homeDirectory = "/home/user";
+	home.stateVersion = "25.05";
 	
 	programs.firefox.enable = true;
-	
-	home.stateVersion = "25.05";
 }

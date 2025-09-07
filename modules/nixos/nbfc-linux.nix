@@ -4,14 +4,6 @@ let
     command = "bin/nbfc_service --config-file '/etc/nbfc/config.json'";
 in
 {
-    options = {
-        modules.nbfc.enable = lib.mkEnableOption "nbfc-linux";
-        modules.nbfc.model = lib.mkOption {
-            description = "model laptop";
-            default = "";
-        };
-    };
-
     config = lib.mkIf config.modules.nbfc.enable  {
         environment.systemPackages = with pkgs; [ nbfc-linux ];
         environment.etc."nbfc/config.json".text = ''
