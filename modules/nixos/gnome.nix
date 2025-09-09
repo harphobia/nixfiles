@@ -16,9 +16,9 @@
         	gnome-extension-manager
         	gnome-clocks
         	easyeffects
-		helvum
-		pavucontrol
-		yaru-theme
+			helvum
+			pavucontrol
+			yaru-theme
         ];
         
         # services.gnome.gnome-keyring.enable = lib.mkForce false;

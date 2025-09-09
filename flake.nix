@@ -40,17 +40,7 @@
 			extraSpecialArgs = { inherit inputs; };
 			modules = [
 				./host/variable.nix
-				./modules/home-manager/home-files/default.nix
-			];
-		};
-		
-		homeConfigurations.hyprland = inputs.home-manager.lib.homeManagerConfiguration {
-			inherit pkgs;
-			extraSpecialArgs = { inherit inputs; };
-			modules = [
-				inputs.nixvim.homeModules.nixvim
-				./host/variable.nix
-				./modules/home-manager/home-files/hyprland.nix
+				./host/home.nix
 			];
 		};
 	};

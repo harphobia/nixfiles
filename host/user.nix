@@ -9,7 +9,7 @@
 
      services.displayManager.autoLogin.enable = true;
      services.displayManager.autoLogin.user = "user";
-    # services.getty.autologinUser = "user";
+     # services.getty.autologinUser = "user";
 
     programs.obs-studio.enableVirtualCamera = true;
     programs.gamemode.enable = true;
