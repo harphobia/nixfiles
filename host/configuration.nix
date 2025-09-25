@@ -9,10 +9,9 @@
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  services.flatpak.enable = true;
 
-   boot.supportedFilesystems = [ "ntfs" ];
-   boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.supportedFilesystems = [ "ntfs" ];
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

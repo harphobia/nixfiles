@@ -12,5 +12,6 @@
         ./vm.nix
 	./fonts.nix
 	./print.nix
+	./flatpak.nix
     ];
 }
