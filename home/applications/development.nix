@@ -6,9 +6,4 @@
 		lazydocker
 		vscode
 	];
-
-	programs.java = { 
-		enable = true;
-		package = pkgs.temurin-bin;
-	};
 }
