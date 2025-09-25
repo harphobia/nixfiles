@@ -53,7 +53,7 @@
 		# evince	# document viewer
 		# file-roller	# archive manager
 		geary		# email client
-		seahorse	# password manager
+		# seahorse	# password manager
 		# simple-scan	# document scanner
 		# totem		# video player
 		yelp		# help viewer

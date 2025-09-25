@@ -15,6 +15,7 @@
 		arrpc
 		home-manager
 		git
+		scx.full
 	];
 
 	programs.adb.enable = true;

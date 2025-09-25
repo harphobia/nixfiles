@@ -11,5 +11,6 @@
         ./steam.nix
         ./vm.nix
 	./fonts.nix
+	./print.nix
     ];
 }
