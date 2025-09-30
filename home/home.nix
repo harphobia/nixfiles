@@ -2,6 +2,7 @@
 {
 	imports = [ 
 		./applications
+		./niri
 	];
 	
 	home.username = "user";
