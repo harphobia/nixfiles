@@ -4,6 +4,7 @@
 	services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 
 	environment.systemPackages = with pkgs; [ cudaPackages.cudatoolkit ];
+	boot.kernelParams = ["nvidia_drm.modeset=1"];
 
 	hardware.nvidia = {
 		modesetting.enable = true;
