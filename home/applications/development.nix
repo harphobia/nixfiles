@@ -4,6 +4,6 @@
 		lazygit
 		lazysql
 		lazydocker
-		vscode
+		zed-editor
 	];
 }
