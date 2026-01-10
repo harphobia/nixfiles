@@ -3,19 +3,15 @@
 	hardware.graphics.enable = true;
 	services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 
-	environment.variables = {
-		__GL_SHADER_DISK_CACHE_SKIP_CLEANUP = 1;
-	};
-
 	environment.systemPackages = with pkgs; [ cudaPackages.cudatoolkit ];
 
 	hardware.nvidia = {
 		modesetting.enable = true;
 		powerManagement.enable = false;
 		powerManagement.finegrained = false;
-		open = false;
+		open = true;
 		nvidiaSettings = false;
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
+		package = config.boot.kernelPackages.nvidiaPackages.latest;
 
 		prime = {
 			offload = {

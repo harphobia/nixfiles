@@ -7,11 +7,11 @@
     	./docker.nix
         ./utils.nix
         ./zsh.nix
-        ./gnome.nix
         ./steam.nix
         ./vm.nix
 	./fonts.nix
 	./print.nix
 	./flatpak.nix
+	./pipewire.nix
     ];
 }
