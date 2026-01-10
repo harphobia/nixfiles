@@ -2,7 +2,6 @@
 {
 	imports = [
 		./browser.nix
-		./obs.nix
 		./libreoffice.nix
 		./git.nix
 		./development.nix
