@@ -19,7 +19,7 @@
 	];
 
 	programs.adb.enable = true;
-
+	services.udisks2.enable = true;
 	programs.obs-studio.enableVirtualCamera = true;
 	boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
 }
