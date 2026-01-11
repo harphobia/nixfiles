@@ -2,6 +2,7 @@
 {
 	imports = [ 
 		./applications
+		./config
 	];
 	
 	home.username = "user";

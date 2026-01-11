@@ -13,5 +13,6 @@
 	./print.nix
 	./flatpak.nix
 	./pipewire.nix
+	./sway.nix
     ];
 }

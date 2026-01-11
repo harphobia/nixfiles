@@ -1,0 +1,9 @@
+[window]
+padding = { x = 3, y = 3 }
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 10
+
+[colors.primary]
+background = "#0e0e0e"

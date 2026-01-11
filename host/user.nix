@@ -6,4 +6,6 @@
         extraGroups = [ "networkmanager" "wheel" "docker" "gamemode" "adbusers" "libvirtd" "kvm" "qemu" ];
         shell = pkgs.zsh;
     };
+
+   services.getty.autologinUser = "user";
 }

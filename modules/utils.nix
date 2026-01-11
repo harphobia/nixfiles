@@ -16,6 +16,9 @@
 		home-manager
 		git
 		scx.full
+
+		nemo
+		mate.engrampa
 	];
 
 	programs.adb.enable = true;
