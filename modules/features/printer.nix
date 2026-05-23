@@ -1,0 +1,11 @@
+{self, inputs, ...}:
+{
+    self.nixosModules.printer = { ... } : {
+        services.printing = {
+            enable = true;
+            drivers = with pkgs; [ 
+                epson-201401w	#Epson(L456, L455, L366, L365, L362, L360, L312, L310, L222, L220, L132, L130)
+            ];
+        };
+    }
+}
