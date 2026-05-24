@@ -5,6 +5,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+			inputs.nixpkgs.follows = "nixpkgs-stable";
+		};
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake
