@@ -18,5 +18,5 @@
             script = "${pkgs.nbfc-linux}/${command}";
             wantedBy = ["multi-user.target"];
         };
-    }
+    };
 }

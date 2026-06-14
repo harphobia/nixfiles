@@ -18,5 +18,5 @@
                 "default.clock.max-quantum" = 16384;
             };
         };
-    }
+    };
 }

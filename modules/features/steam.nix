@@ -37,5 +37,5 @@
 		environment.systemPackages = with pkgs; [
 			gamescope-wsi
 		];
-    }
+    };
 }

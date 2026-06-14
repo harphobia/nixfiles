@@ -13,5 +13,5 @@
                 CPU_MAX_PERF_ON_BAT = 65;
             };
         };
-    }
+    };
 }

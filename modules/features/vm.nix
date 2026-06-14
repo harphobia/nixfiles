@@ -7,5 +7,5 @@
             qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
         };
         virtualisation.spiceUSBRedirection.enable = true;
-    }
+    };
 }
