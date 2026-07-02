@@ -3,7 +3,6 @@
   flake.nixosModules.nitro = { pkgs, ... }: {
 
     imports = [
-		./hardware-configuration.nix
 		self.nixosModules.users
 		self.nixosModules.overlays
     ];
