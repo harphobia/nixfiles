@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.nbfc = { pkgs, ... }:
+    flake.nixosModules.nbfc = { pkgs, ... }:
     let
         command = "bin/nbfc_service --config-file '/etc/nbfc/config.json'";
     in

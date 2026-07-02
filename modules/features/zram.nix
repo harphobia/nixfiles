@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.zram = { ... } : {
+    flake.nixosModules.zram = { ... } : {
         zramSwap = {
             enable = true;
             priority = 100;

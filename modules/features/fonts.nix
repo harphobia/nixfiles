@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.fonts = { ... } : {
+    flake.nixosModules.fonts = { pkgs, ... } : {
         fonts.packages = with pkgs; [
             noto-fonts
             noto-fonts-cjk-sans

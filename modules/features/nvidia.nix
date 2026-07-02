@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.nvidia = { pkgs, ... } : {
+    flake.nixosModules.nvidia = { pkgs, config, ... } : {
         hardware.graphics.enable = true;
         services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 

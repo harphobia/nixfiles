@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.printer = { ... } : {
+    flake.nixosModules.printer = { ... } : {
         services.printing = {
             enable = true;
             drivers = with pkgs; [ 

@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.pipewire = { ... } : {
+    flake.nixosModules.pipewire = { ... } : {
         services.pulseaudio.enable = false;
         security.rtkit.enable = true;
         services.pipewire = {

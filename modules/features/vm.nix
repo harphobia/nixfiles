@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.vm = { ... } : {
+    flake.nixosModules.vm = { pkgs, ... } : {
         programs.virt-manager.enable = true;
         virtualisation.libvirtd = {
             enable = true;

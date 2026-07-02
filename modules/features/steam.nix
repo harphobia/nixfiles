@@ -1,6 +1,6 @@
 {self, inputs, ...}:
 {
-    self.nixosModules.steam = { ... } : {
+    flake.nixosModules.steam = { pkgs, ... } : {
         programs.steam = {
 			enable = true;
 			remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
