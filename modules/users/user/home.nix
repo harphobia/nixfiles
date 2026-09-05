@@ -2,6 +2,7 @@
       flake.homeModules.user = { ... }: {
 		  imports = [
 			self.homeModules.git
+			self.homeModules.bash
 		  ];
 
 	      home.username = "user";
