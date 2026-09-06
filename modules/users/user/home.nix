@@ -1,16 +1,16 @@
 { self, inputs, ... }: {
       flake.homeModules.user = { ... }: {
 		  imports = [
-			inputs.niri-flake.homeModules.niri
-			inputs.noctalia.homeModules.default
+  			inputs.niri-flake.homeModules.niri
+  			inputs.noctalia.homeModules.default
 
-			self.homeModules.git
-			self.homeModules.bash
-			self.homeModules.theme
-			self.homeModules.udiskie
-			self.homeModules.ghostty
-			self.homeModules.niri
-			self.homeModules.noctalia
+  			self.homeModules.git
+  			self.homeModules.bash
+  			self.homeModules.theme
+  			self.homeModules.udiskie
+  			self.homeModules.ghostty
+  			self.homeModules.niri
+  			self.homeModules.noctalia
 		  ];
 
 	      home.username = "user";

@@ -3,21 +3,21 @@
   flake.nixosModules.nitroConfiguration = { pkgs, ... }: {
 
     imports = [
-		self.nixosModules.user
-        self.nixosModules.nitro-hardware-configuration
+  		self.nixosModules.user
+      self.nixosModules.nitro-hardware-configuration
 
-		self.nixosModules.bash
-		self.nixosModules.fonts
-		self.nixosModules.nbfc-linux
-		self.nixosModules.nvidia
-		self.nixosModules.pipewire
-		self.nixosModules.docker
-		self.nixosModules.printer
-		self.nixosModules.steam
-		self.nixosModules.tlp
-		self.nixosModules.utils
-		self.nixosModules.vm
-		self.nixosModules.niri
+  		self.nixosModules.bash
+  		self.nixosModules.fonts
+  		self.nixosModules.nbfc-linux
+  		self.nixosModules.nvidia
+  		self.nixosModules.pipewire
+  		self.nixosModules.docker
+  		self.nixosModules.printer
+  		self.nixosModules.steam
+  		self.nixosModules.tlp
+  		self.nixosModules.utils
+  		self.nixosModules.vm
+
     ];
 
 	nixpkgs.overlays = [
@@ -25,8 +25,10 @@
 		inputs.helium.overlays.default
 		self.overlays.nixpkgs-stable
 		self.overlays.nbfc-linux
-	];
-    nixpkgs.config.allowUnfree = true;
+		self.nixosModules.niri
+  ];
+
+  nixpkgs.config.allowUnfree = true;
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

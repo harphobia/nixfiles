@@ -22,7 +22,7 @@
                 prefer-no-csd = true;
                 screenshot-path = "~/Pictures/Screenshots/Screenshot_%F-%T.png";
                 animations.slowdown = 0.25;
-		gestures.hot-corners.enable = true;
+                gestures.hot-corners.enable = true;
                 debug.render-drm-device = "/dev/dri/renderD128";
             };
             settings.input = {
@@ -38,10 +38,10 @@
             settings.outputs = {
                 "eDP-1" = {
                     mode = {
-			height = 1080;
-			width = 1920;
-			refresh = 144.0;
-		    };
+                 			height = 1080;
+                 			width = 1920;
+                 			refresh = 144.0;
+            		    };
                     scale = 1;
                     position = {
                         x = 0;
@@ -54,9 +54,9 @@
                     center-focused-column = "never";
                     background-color = "#0e0e0e";
                     border = {
-			enable = true;
-			width = 0.5;
-		    };
+                 			enable = true;
+                 			width = 0.5;
+		                };
 
                     preset-column-widths = [
                         { proportion = 0.5; }
