@@ -11,8 +11,8 @@
 			enable = true;
 
 			theme = {
-				package = pkgs.gnome-themes-extra;
-				name = "Adwaita-dark";
+				name = "adw-gtk3";
+				package = pkgs.adw-gtk3;
 			};
 
 			iconTheme = {

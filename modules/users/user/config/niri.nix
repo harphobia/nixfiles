@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
      flake.homeModules.niri = { pkgs, lib, ... }:
      let
-        noctalia = lib.getExe pkgs.noctalia
+        noctalia = lib.getExe pkgs.noctalia;
      in
      {
         programs.niri = {
@@ -13,21 +13,20 @@
                     QT_QPA_PLATFORMTHEME_QT6 = "gtk3";
                     DISPLAY = ":0";
                 };
-                spawn-sh-at-startup = [
-                    "flatpak run com.github.wwmm.easyeffects --gapplication-service"
-                    "noctalia"
+                spawn-at-startup = [
+                    {sh = "flatpak run com.github.wwmm.easyeffects --gapplication-service";}
+                    {sh = "noctalia";}
                 ];
-                recent-windows.off = true;
                 overview.backdrop-color = "#0e0e0e";
                 hotkey-overlay.skip-at-startup = true;
                 prefer-no-csd = true;
                 screenshot-path = "~/Pictures/Screenshots/Screenshot_%F-%T.png";
                 animations.slowdown = 0.25;
-                gestures.hot-corners.off = true;
+		gestures.hot-corners.enable = true;
                 debug.render-drm-device = "/dev/dri/renderD128";
             };
             settings.input = {
-                keyboard.numlock = {};
+                keyboard.numlock = true;
                 touchpad = {
                     tap = true;
                     natural-scroll = true;
@@ -38,9 +37,12 @@
             };
             settings.outputs = {
                 "eDP-1" = {
-                    mode = "1920x1080@144.0";
+                    mode = {
+			height = 1080;
+			width = 1920;
+			refresh = 144.0;
+		    };
                     scale = 1;
-                    transform = "normal";
                     position = {
                         x = 0;
                         y = 0;
@@ -51,7 +53,10 @@
                     gaps = 5;
                     center-focused-column = "never";
                     background-color = "#0e0e0e";
-                    border.off = true;
+                    border = {
+			enable = true;
+			width = 0.5;
+		    };
 
                     preset-column-widths = [
                         { proportion = 0.5; }
@@ -64,8 +69,8 @@
 
                     focus-ring = {
                         width = 1;
-                        active-color = "#7fc8ff";
-                        inactive-color = "#505050";
+                        active.color = "#7fc8ff";
+                        inactive.color = "#505050";
                     };
             };
             settings.window-rules = [
@@ -81,12 +86,12 @@
                 "Mod+Shift+Slash".action.show-hotkey-overlay = {};
 
                 "Mod+T" = {
-                    hotkey-overlay-title = "Open a Terminal";
+                    hotkey-overlay.title = "Open a Terminal";
                     action.spawn = [ "ghostty" ];
                 };
 
                 "Mod+D" = {
-                    hotkey-overlay-title = "Run an Application";
+                    hotkey-overlay.title = "Run an Application";
                     action.spawn-sh = "${noctalia} msg panel-toggle launcher";
                 };
 
