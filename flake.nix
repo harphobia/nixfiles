@@ -5,10 +5,10 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    home-manager.url = "github:nix-community/home-manager";
 
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
-    helium.inputs.nixpkgs.follows = "nixpkgs-stable";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    helium.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

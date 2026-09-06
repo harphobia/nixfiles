@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosConfigurations.nitro = inputs.nixpkgs-stable.lib.nixosSystem {
+  flake.nixosConfigurations.nitro = inputs.nixpkgs-unstable.lib.nixosSystem {
     modules = [
       self.nixosModules.nitroConfiguration
     ];
