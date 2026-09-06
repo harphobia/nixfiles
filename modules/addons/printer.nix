@@ -1,13 +1,10 @@
 { self, inputs, ... }: {
-      flake.nixosModules.docker = { pkgs, lib, ... }: {
-        	virtualisation = {
-                  containers.enable = true;
-
-                  podman = {
-                        enable = true;
-                        dockerCompat = true;
-                        defaultNetwork.settings.dns_enabled = true;
-                  };
+      flake.nixosModules.printer = { pkgs, lib, ... }: {
+        	services.printing = {
+                enable = true;
+                drivers = with pkgs; [ 
+                    epson-201401w	# (L456, L455, L366, L365, L362, L360, L312, L310, L222, L220, L132, L130)
+                ];
             };
       };
 }
