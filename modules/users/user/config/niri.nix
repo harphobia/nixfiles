@@ -45,7 +45,7 @@
                         x = 0;
                         y = 0;
                     };
-                }
+                };
             };
             settings.layout = {
                     gaps = 5;
