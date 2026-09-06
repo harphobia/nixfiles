@@ -8,7 +8,7 @@
 
 		self.nixosModules.bash
 		self.nixosModules.fonts 
-		#self.nixosModules.nbfc-linux
+		self.nixosModules.nbfc-linux
 		self.nixosModules.nvidia
 		self.nixosModules.pipewire
 		self.nixosModules.docker 

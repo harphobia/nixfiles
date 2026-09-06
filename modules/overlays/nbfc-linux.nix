@@ -1,7 +1,11 @@
 { self, inputs, ... }: {
-    flake.overlays.nbfc-linux = final: prev: {
+	flake.overlays.nbfc-linux = final: prev: {
 		nbfc-linux = prev.nbfc-linux.overrideAttrs (oldAttrs: {
-			postInstall = (oldAttrs.postInstall or "") + ''
+				nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ prev.jq ];
+
+				postInstall = (oldAttrs.postInstall or "") + ''
+				target="$out/share/nbfc/configs/Acer Nitro AN515-57.json"
+
 				${prev.jq}/bin/jq '.RegisterWriteConfigurations[0] = {
 				"WriteMode": "Set",
 				"WriteOccasion": "OnInitialization",
@@ -11,9 +15,8 @@
 				"ResetValue": 65,
 				"ResetWriteMode": "Set",
 				"Description": "Make manual fan control possible for AC"
-				}' $out/share/nbfc/configs/Acer\ Nitro\ AN515-57.json > $out/share/nbfc/configs/Acer\ Nitro\ AN515-57.json.new
-				mv $out/share/nbfc/configs/Acer\ Nitro\ AN515-57.json.new $out/share/nbfc/configs/Acer\ Nitro\ AN515-57.json
-			'';
-		});
-    };
+				}' "$target" > target.tmp && mv target.tmp "$target"
+				'';
+				});
+	};
 }
