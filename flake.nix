@@ -9,6 +9,7 @@
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     niri-flake.url = " github:sodiboo/niri-flake";
     noctalia.url = "github:noctalia-dev/noctalia";
+    helium.url = "github:schembriaiden/helium-browser-nix-flake";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     helium.inputs.nixpkgs.follows = "nixpkgs-unstable";
