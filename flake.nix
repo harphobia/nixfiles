@@ -5,8 +5,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
+    home-manager.url = "github:nix-community/home-manager";
 
+<<<<<<< HEAD
     niri-flake.url = "github:sodiboo/niri-flake";
     noctalia.url = "github:noctalia-dev/noctalia";
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
@@ -14,6 +15,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
     noctalia.inputs.nixpkgs.follows = "nixpkgs-stable";
     helium.inputs.nixpkgs.follows = "nixpkgs-stable";
+=======
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+    helium.inputs.nixpkgs.follows = "nixpkgs-unstable";
+>>>>>>> 3125cef (change to unstable as default)
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

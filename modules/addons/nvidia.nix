@@ -2,16 +2,16 @@
       flake.nixosModules.nvidia = { pkgs, lib, config, ... }: {
         	hardware.graphics.enable = true;
             services.xserver.videoDrivers = [ "modesetting" "nvidia"];
-    
-            environment.systemPackages = [ pkgs.unstable.cudaPackages.cudatoolkit ];
+
+            environment.systemPackages = [ pkgs.cudaPackages.cudatoolkit ];
             boot.kernelParams = ["nvidia_drm.modeset=1"];
-    
+
             hardware.nvidia = {
                 modesetting.enable = true;
                 open = true;
                 nvidiaSettings = false;
                 package = config.boot.kernelPackages.nvidiaPackages.latest;
-    
+
                 prime = {
                     offload = {
                         enable = true;

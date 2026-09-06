@@ -7,12 +7,12 @@
         self.nixosModules.nitro-hardware-configuration
 
 		self.nixosModules.bash
-		self.nixosModules.fonts 
+		self.nixosModules.fonts
 		self.nixosModules.nbfc-linux
 		self.nixosModules.nvidia
 		self.nixosModules.pipewire
-		self.nixosModules.docker 
-		self.nixosModules.printer 
+		self.nixosModules.docker
+		self.nixosModules.printer
 		self.nixosModules.steam
 		self.nixosModules.tlp
 		self.nixosModules.utils
@@ -23,7 +23,7 @@
 	nixpkgs.overlays = [
 		inputs.niri-flake.overlays.niri
 		inputs.helium.overlays.default
-		self.overlays.nixpkgs-unstable
+		self.overlays.nixpkgs-stable
 		self.overlays.nbfc-linux
 	];
     nixpkgs.config.allowUnfree = true;
@@ -54,16 +54,16 @@
 		layout = "us";
 		variant = "";
 	};
-	
+
 	zramSwap = {
 		enable = true;
 		priority = 100;
 		algorithm = "lz4";
 		memoryPercent = 50;
 	};
-	
-	system.stateVersion = "26.05";
-	boot.kernelPackages = pkgs.unstable.linuxPackages_zen;
+
+	system.stateVersion = "26.11";
+	boot.kernelPackages = pkgs.linuxPackages_zen;
   };
 
 }
