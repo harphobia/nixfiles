@@ -17,7 +17,7 @@
   		self.nixosModules.tlp
   		self.nixosModules.utils
   		self.nixosModules.vm
-
+  		self.nixosModules.niri
     ];
 
 	nixpkgs.overlays = [
