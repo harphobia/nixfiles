@@ -16,10 +16,12 @@
 		self.nixosModules.steam
 		self.nixosModules.tlp
 		self.nixosModules.utils
-		self.nixosModules.vm 
+		self.nixosModules.vm
+		self.nixosModules.niri
     ];
 
 	nixpkgs.overlays = [
+		inputs.niri-flake.overlays.niri
 		self.overlays.nixpkgs-unstable
 		self.overlays.nbfc-linux 
 	];
