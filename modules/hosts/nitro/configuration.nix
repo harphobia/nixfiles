@@ -4,7 +4,7 @@
 
     imports = [
 		self.nixosModules.user
-        ./hardware-configuration.nix
+        self.nixosModules.nitro-hardware-configuration
 
 		self.nixosModules.bash
 		self.nixosModules.fonts 
@@ -20,8 +20,9 @@
     ];
 
 	nixpkgs.overlays = [
+		inputs.helium.overlays.default
 		self.overlays.nixpkgs-unstable
-		self.overlays.nbfc-linux 
+		self.overlays.nbfc-linux
 	];
     nixpkgs.config.allowUnfree = true;
 
