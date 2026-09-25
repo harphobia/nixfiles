@@ -6,6 +6,7 @@
     import-tree.url = "github:vic/import-tree";
     helium.url = "github:schembriaiden/helium-browser-nix-flake";
     home-manager.url = "github:nix-community/home-manager";
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
     helium.inputs.nixpkgs.follows = "nixpkgs-unstable";

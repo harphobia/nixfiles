@@ -3,6 +3,9 @@
   		  imports = [
      			self.homeModules.git
      			self.homeModules.bash
+     			self.homeModules.niri
+     			self.homeModules.fuzzel
+     			self.homeModules.mako
   		  ];
 
 	      home.username = "user";

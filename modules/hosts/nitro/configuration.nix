@@ -21,6 +21,7 @@
 
 	nixpkgs.overlays = [
 		inputs.helium.overlays.default
+		inputs.niri-flake.overlays.niri
 		self.overlays.nixpkgs-stable
 		self.overlays.nbfc-linux
 	];
