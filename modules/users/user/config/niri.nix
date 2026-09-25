@@ -1,5 +1,14 @@
 { self, inputs, ... }: {
 	flake.homeModules.niri = { ... }: {
+		home.packages = with pkgs; [
+			xwayland-satellite
+			fuzzel
+			mako
+			ghostty
+			wl-clipboard
+			swayidle
+		];
+
 		programs.niri = {
 			package = pkgs.niri-unstable;
 			settings = {
@@ -286,4 +295,4 @@
 			};
 		};
 	};
-		       }
+}
