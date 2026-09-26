@@ -12,7 +12,7 @@
 				fd fzf tree
 				pciutils usbutils ntfs3g
 				ffmpeg vim
-				home-manager git
+				home-manager git brightnessctl
 				scx.full android-tools 
 				lsfg-vk lsfg-vk-ui
 				wget aria2

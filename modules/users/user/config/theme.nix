@@ -26,6 +26,11 @@
 				name = "Adwaita";
 				package = pkgs.adwaita-icon-theme;
 			};
+			
+			font = {
+                                name = "Noto Sans 10";
+                                package = pkgs.noto-fonts;
+                        };
 		};
 
 		home.pointerCursor = {

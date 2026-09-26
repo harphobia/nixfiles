@@ -1,13 +1,14 @@
 { self, inputs, ... }: {
 	flake.homeModules.niri = {  pkgs, ... }: {
 		home.packages = with pkgs; [
-				xwayland-satellite
 				fuzzel
 				ghostty
 				swayidle
 				wl-clipboard
 				nautilus
 				loupe
+		] ++ [
+			(let pkgs = import inputs.nixpkgs-xwayland-satellite-0-8-1 { system = "x86_64-linux"; }; in pkgs.xwayland-satellite) # Downgrade xwayland-satellite to 0.8.1
 		];
 
 		programs.niri.enable = true;
@@ -270,6 +271,10 @@
 				"Ctrl+Alt+Delete".action.quit = {};
 
 				"Mod+Shift+P".action.power-off-monitors = {};
+			};
+			debug = {
+				render-drm-device = "/dev/dri/renderD128"; 
+				ignore-drm-device = "/dev/dri/renderD129";
 			};
 		};
 		dconf.settings = {
