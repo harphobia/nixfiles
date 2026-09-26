@@ -10,7 +10,7 @@
       };
 
     flake.homeConfigurations.user = inputs.home-manager.lib.homeManagerConfiguration {
-            pkgs = inputs.nixpkgs-stable.legacyPackages."x86_64-linux";
+            pkgs = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
             modules = [ self.homeModules.user ];
     };
 }

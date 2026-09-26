@@ -1,0 +1,12 @@
+{ self, inputs, ... }: {
+	flake.homeModules.udiskie = { lib, pkgs, ... }: {
+		services.udiskie = {
+			enable = true;
+			settings = {
+				program_options = {
+					file_manager = lib.getExe pkgs.nautilus;
+				};
+			};
+		};	
+	};
+}

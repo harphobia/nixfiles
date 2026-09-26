@@ -1,25 +1,29 @@
 { self, inputs, ... }: {
-      flake.nixosModules.nvidia = { pkgs, lib, config, ... }: {
-        	hardware.graphics.enable = true;
-            services.xserver.videoDrivers = [ "modesetting" "nvidia"];
+	flake.nixosModules.nvidia = { pkgs, lib, config, ... }: {
+		hardware.graphics.enable = true;
+		hardware.nvidia-container-toolkit.enable = true;
+		services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 
-            environment.systemPackages = [ pkgs.cudaPackages.cudatoolkit ];
-            boot.kernelParams = ["nvidia_drm.modeset=1"];
+		environment.systemPackages = with pkgs;[
+			cudaPackages.cudatoolkit
+			nvidia-container-toolkit
+		];
+		boot.kernelParams = ["nvidia_drm.modeset=1"];
 
-            hardware.nvidia = {
-                modesetting.enable = true;
-                open = true;
-                nvidiaSettings = false;
-                package = config.boot.kernelPackages.nvidiaPackages.latest;
+		hardware.nvidia = {
+			modesetting.enable = true;
+			open = true;
+			nvidiaSettings = false;
+			package = config.boot.kernelPackages.nvidiaPackages.latest;
 
-                prime = {
-                    offload = {
-                        enable = true;
-                        enableOffloadCmd = true;
-                    };
-                    intelBusId = "PCI:0:2:0";
-                    nvidiaBusId = "PCI:1:0:0";
-                };
-            };
-      };
+			prime = {
+				offload = {
+					enable = true;
+					enableOffloadCmd = true;
+				};
+				intelBusId = "PCI:0:2:0";
+				nvidiaBusId = "PCI:1:0:0";
+			};
+		};
+	};
 }

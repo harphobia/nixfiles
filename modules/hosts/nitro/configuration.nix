@@ -4,7 +4,7 @@
 
     imports = [
 		self.nixosModules.user
-        self.nixosModules.nitro-hardware-configuration
+                self.nixosModules.nitro-hardware-configuration
 
 		self.nixosModules.bash
 		self.nixosModules.fonts
@@ -17,6 +17,7 @@
 		self.nixosModules.tlp
 		self.nixosModules.utils
 		self.nixosModules.vm
+ 		inputs.niri-flake.nixosModules.niri
     ];
 
 	nixpkgs.overlays = [

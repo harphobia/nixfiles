@@ -12,7 +12,7 @@
                     enable = true;
                     capSysNice = false;
                     env = {
-                        SDL_VIDEODRIVER="x11";
+			PROTON_ENABLE_WAYLAND="1";
                         PROTON_DLSS_UPGRADE="1";
                         PROTON_FSR4_UPGRADE="1";
                     };
@@ -22,7 +22,6 @@
                         "--nested-refresh 144"
                         "--fullscreen "
                         "--force-grab-cursor"
-                        "--backend sdl"
                         "--immediate-flips"
                     ];
                 };

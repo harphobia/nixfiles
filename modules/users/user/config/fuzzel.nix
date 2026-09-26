@@ -10,7 +10,6 @@
 					lines = 5;
 					horizontal-pad = 3;
 					vertical-pad = 3;
-					prompt = "";
 				};
 
 				colors = {
@@ -55,7 +54,7 @@
 			STATUS_LINE="$DATE_STR │ $BATT_STR"
 
 			# 4. Launch normal Fuzzel with the status line as the placeholder
-			fuzzel --placeholder=" $STATUS_LINE"
+			fuzzel --placeholder="$STATUS_LINE"
 		      '';
 		      executable = true; 
 	    };
