@@ -8,9 +8,11 @@
 		home-manager.url = "github:nix-community/home-manager";
 		niri-flake.url = "github:epireyn/niri-flake";
 		nixpkgs-xwayland-satellite-0-8-1.url = "github:nixos/nixpkgs/edfd59b795cd752c36d2dae60870cffcd23d3fb1";
-
+		nixvim.url = "github:nix-community/nixvim";		
+	
 		home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 		helium.inputs.nixpkgs.follows = "nixpkgs-unstable";
+		niri-flake.inputs.nixpkgs.follows = "nixpkgs-unstable";
 	};
 
 	outputs = inputs: inputs.flake-parts.lib.mkFlake
