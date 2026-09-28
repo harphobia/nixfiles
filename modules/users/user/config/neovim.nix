@@ -10,11 +10,13 @@
 			opts = {
 				number = true;
 				relativenumber = true;
+				shiftwidth = 4;
+				tabstop = 4;
+				expandtab = true;
 				smartindent = true;
 				termguicolors = true;
 				cursorline = true;
 				signcolumn = "yes";
-				undofile = true;
 				updatetime = 50;
 			};
 
@@ -63,7 +65,7 @@
 						file-browser = {
 							enable = true;
 							settings = {
-								hijack_netrw = true;
+								hijck_netrw = true;
 								hidden = true;
 							};
 						};
