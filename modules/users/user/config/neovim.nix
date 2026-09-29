@@ -5,7 +5,7 @@
 			enable = true;
 			viAlias = true;
 			defaultEditor = true;
-			colorscheme = "retrobox";
+			colorscheme = "adwaita";
 			globals.mapleader = " ";
 			opts = {
 				number = true;
@@ -19,7 +19,9 @@
 				signcolumn = "yes";
 				updatetime = 50;
 			};
-
+            extraPlugins = [
+                pkgs.vimPlugins.adwaita-nvim
+            ];
 			plugins = {
 				# addon for auto close symbol and tag
 				autoclose.enable = true;
