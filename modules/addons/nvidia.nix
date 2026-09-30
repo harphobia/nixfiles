@@ -5,7 +5,6 @@
 		services.xserver.videoDrivers = [ "modesetting" "nvidia"];
 
 		environment.systemPackages = with pkgs;[
-			cudaPackages.cudatoolkit
 			nvidia-container-toolkit
 		];
 		boot.kernelParams = ["nvidia_drm.modeset=1"];
