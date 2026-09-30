@@ -36,10 +36,8 @@
         };
         programs.gamemode = {
             enable = true;
-            enableRenice = true;
             settings = {
                 general = {
-                    renice = 10;
                     inhibit_screensaver = 1;
                 };
                 custom = {
