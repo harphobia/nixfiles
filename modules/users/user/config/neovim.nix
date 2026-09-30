@@ -6,7 +6,9 @@
 			viAlias = true;
 			defaultEditor = true;
 			colorscheme = "adwaita";
-			globals.mapleader = " ";
+			globals = {
+                mapleader = " ";
+            };
 			opts = {
 				number = true;
 				relativenumber = true;
@@ -67,7 +69,7 @@
 						file-browser = {
 							enable = true;
 							settings = {
-								hijck_netrw = true;
+								hijack_netrw = true;
 								hidden = true;
 							};
 						};
@@ -79,8 +81,15 @@
 					enable = true;
 					servers = {
 						lua_ls.enable = true;
-						nixd.enable = true;
-						biome.enable = true;
+                        ts_ls.enable = true;
+                        jsonls.enable = true;
+                        nixd.enable = true;
+                        biome.enable = true;
+                        rust_analyzer = {
+                            enable = true;
+                            installCargo = true;
+                            installRustc = true;
+                        };
 					};
 				};
 
@@ -90,9 +99,9 @@
 					autoEnableSources = true;
 					settings = {
 						sources = [
-						{ name = "nvim_lsp"; }
-						{ name = "path"; }
-						{ name = "buffer"; }
+                            { name = "nvim_lsp"; }
+                            { name = "path"; }
+                            { name = "buffer"; }
 						];
 						mapping = {
 							"<C-Space>" = "cmp.mapping.complete()";
