@@ -13,10 +13,11 @@
 				pciutils usbutils ntfs3g
 				ffmpeg vim
 				home-manager git brightnessctl
-				scx.full android-tools 
+				android-tools 
 				lsfg-vk lsfg-vk-ui
 				wget aria2
 				helium libreoffice mpv
+				syswatch nvtopPackages.full
 		];
 
 		services.udisks2.enable = true;
