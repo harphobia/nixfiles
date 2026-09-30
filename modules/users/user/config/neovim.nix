@@ -70,21 +70,22 @@
 							enable = true;
 							settings = {
 								hijack_netrw = true;
-								hidden = true;
+                                grouped = true;
+                                cwd_to_path = true;
 							};
 						};
 					};
 				};
 
 				# Language Server Protocol (LSP)
+                tiny-inline-diagnostic.enable = true;
 				lsp = {
 					enable = true;
 					servers = {
 						lua_ls.enable = true;
-                        ts_ls.enable = true;
-                        jsonls.enable = true;
                         nixd.enable = true;
                         biome.enable = true;
+                        vtsls.enable = true;
                         rust_analyzer = {
                             enable = true;
                             installCargo = true;
