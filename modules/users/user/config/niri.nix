@@ -7,8 +7,7 @@
 				wl-clipboard
 				nautilus
 				loupe
-		] ++ [
-			(let pkgs = import inputs.nixpkgs-xwayland-satellite-0-8-1 { system = "x86_64-linux"; }; in pkgs.xwayland-satellite) # Downgrade xwayland-satellite to 0.8.1
+                xwayland-satellite
 		];
 
 		programs.niri.enable = true;
