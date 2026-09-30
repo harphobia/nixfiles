@@ -25,7 +25,15 @@
                 "--immediate-flips"
             ];
         };
-
+        
+        services.scx-loader ={
+            enable = true;
+            schedsPackages = [ pkgs.scx.full ];
+            config = {
+                    default_sched = "scx_bpfland";
+                    default_mode = "Auto";
+            };
+        };
         programs.gamemode = {
             enable = true;
             enableRenice = true;
