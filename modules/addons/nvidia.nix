@@ -14,7 +14,6 @@
 			open = true;
 			nvidiaSettings = false;
 			package = config.boot.kernelPackages.nvidiaPackages.latest;
-
 			prime = {
 				offload = {
 					enable = true;
