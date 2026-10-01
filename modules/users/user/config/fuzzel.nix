@@ -27,36 +27,33 @@
 				};
 			};
 		};
+    
+        xdg.configFile."fuzzel/scripts/fuzzel-status.sh" = {
+            text = ''
+                #!/usr/bin/env bash
 
-		xdg.configFile."fuzzel/scripts/fuzzel-status.sh" = {
-		      text = ''
-			#!/usr/bin/env bash
+                # Kill stale fuzzel instances immediately so they don't stack up
+                pkill -x fuzzel 2>/dev/null
 
-			# 1. Gather Date & Time info in ISO format
-			DATE_STR=$(date "+%Y-%m-%d │ %H:%M:%S")
+                DATE_STR=$(date "+%Y-%m-%d │ %H:%M:%S")
+                BAT_DIR="/sys/class/power_supply/BAT1"
 
-			# 2. Gather Battery info
-			BAT_DIR="/sys/class/power_supply/BAT1"
-			if [ -d "$BAT_DIR" ]; then
-			    CAPACITY=$(cat "$BAT_DIR/capacity")
-			    STATUS=$(cat "$BAT_DIR/status")
-			    
-			    if [ "$STATUS" = "Charging" ]; then
-				BATT_STR="$CAPACITY% | CHR"
-			    else
-				BATT_STR="$CAPACITY% | BAT"
-			    fi
-			else
-			    BATT_STR="AC Only"
-			fi
+                if [ -d "$BAT_DIR" ]; then
+                    CAPACITY=$(cat "$BAT_DIR/capacity")
+                        STATUS=$(cat "$BAT_DIR/status")
+                        if [ "$STATUS" = "Charging" ]; then
+                            BATT_STR="$CAPACITY% | CHR"
+                        else
+                            BATT_STR="$CAPACITY% | BAT"
+                        fi
+                else
+                    BATT_STR="AC Only"
+                fi
 
-			# 3. Combine into a compact status string
-			STATUS_LINE="$DATE_STR │ $BATT_STR"
+                fuzzel --placeholder="$DATE_STR │ $BATT_STR"
+            '';
+            executable = true;  
+        };
 
-			# 4. Launch normal Fuzzel with the status line as the placeholder
-			fuzzel --placeholder="$STATUS_LINE"
-		      '';
-		      executable = true; 
-	    };
-	};
+    };
 }
