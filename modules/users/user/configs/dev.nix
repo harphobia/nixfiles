@@ -6,6 +6,8 @@
 			nodejs
 			rustup
 			uv
+            frankenphp
+            phpPackages.composer
 			nixd
 			lazygit
 			lazysql

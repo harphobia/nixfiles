@@ -1,5 +1,6 @@
 { self, inputs, ... }: {
-	flake.homeModules.mako = { ... }: {
+	flake.homeModules.mako = { pkgs, ... }: {
+        home.packages = [ pkgs.libnotify ];
 		services.mako = {
 			enable = true;
 			settings = {
