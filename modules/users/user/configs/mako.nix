@@ -1,6 +1,12 @@
 { self, inputs, ... }: {
-	flake.homeModules.mako = { pkgs, ... }: {
-        home.packages = [ pkgs.libnotify ];
+	flake.homeModules.mako = { pkgs, lib, ... }:
+        let 
+            notifSound = ../assets/notif.wav;
+        in
+        {
+        home.packages = with pkgs;[
+            libnotify
+        ];
 		services.mako = {
 			enable = true;
 			settings = {
@@ -16,6 +22,8 @@
 				background-color = "#0e0e0e";
 				text-color = "#eeeeee";
 				border-color = "#555555";
+                on-notify = "exec ${pkgs.pipewire}/bin/pw-cat --playback ${notifSound}";
+
 
 				"urgency=high" = {
 					border-color = "#888888";
