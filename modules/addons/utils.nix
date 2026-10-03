@@ -23,9 +23,10 @@
 		services.udisks2.enable = true;
 		services.flatpak.enable = true;
 
-		# for obs
-		programs.obs-studio.enableVirtualCamera = true;
-		boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
+        programs.gpu-screen-recorder = {
+            enable = true;
+            ui.enable = true; # For overlay
+        };
 
 		programs.java = {
 			enable = true;
@@ -50,7 +51,6 @@
 			};
 		};
 
-		
 		boot.loader.systemd-boot.windows."windows" = {
 			title = "Michaelsoft Binbows";
 			efiDeviceHandle = "FS1";
