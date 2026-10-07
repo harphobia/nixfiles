@@ -45,6 +45,18 @@
 				focus-ring.inactive.color = "#222222";
 				border.enable = false;
 			};
+
+            window-rules = [
+                {
+                    matches = [
+                        { title = "(?i)picture.in.picture"; }
+                    ];
+                    open-floating = true;
+                    default-column-width.fixed = 480;
+                    default-window-height.fixed = 270;
+                }
+            ];
+
 			overview.backdrop-color = "#0e0e0e";
 
 			gestures.hot-corners.enable = false;
