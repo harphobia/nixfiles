@@ -86,6 +86,8 @@
                         nixd.enable = true;
                         biome.enable = true;
                         vtsls.enable = true;
+                        marksman.enable = true;
+                        texlab.enable = true;
                         rust_analyzer = {
                             enable = true;
                             installCargo = true;
