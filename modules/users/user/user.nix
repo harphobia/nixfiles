@@ -3,7 +3,7 @@
             users.users.user = {
                 enable = true;
                 isNormalUser = true;
-                extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" "qemu" "podman" ];
+                extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" "kvm" "qemu" "podman" "dialout"];
                 shell = pkgs.bash;
             };
 
